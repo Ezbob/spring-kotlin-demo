@@ -1,5 +1,9 @@
 package com.example.demo
 
+import com.example.demo.domain.entity.Article
+import com.example.demo.domain.entity.User
+import com.example.demo.domain.repository.ArticleRepository
+import com.example.demo.domain.repository.UserRepository
 import org.springframework.boot.ApplicationRunner
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

@@ -1,5 +1,9 @@
 package com.example.demo
 
+import com.example.demo.domain.entity.Article
+import com.example.demo.domain.entity.User
+import com.example.demo.domain.repository.ArticleRepository
+import com.example.demo.domain.repository.UserRepository
 import com.ninjasquad.springmockk.MockkBean
 import io.mockk.every
 import org.junit.jupiter.api.Test

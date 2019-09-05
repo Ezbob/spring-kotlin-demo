@@ -1,14 +1,19 @@
-package com.example.demo
+package com.example.demo.http
 
+import com.example.demo.BlogProperties
+import com.example.demo.domain.entity.Article
+import com.example.demo.domain.entity.User
+import com.example.demo.domain.repository.ArticleRepository
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.ui.set
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import java.lang.IllegalArgumentException
+import com.example.demo.format
 
 @Controller
-class HtmlController(private val repository: ArticleRepository,
+class RootController(private val repository: ArticleRepository,
                      private val properties: BlogProperties) {
 
     @GetMapping("/")
@@ -21,7 +26,7 @@ class HtmlController(private val repository: ArticleRepository,
 
     @GetMapping("/article/{slug}")
     fun article(@PathVariable slug: String, model: Model): String {
-        var article = repository
+        val article = repository
                 .findBySlug(slug)
                 ?.render()
                 ?: throw IllegalArgumentException("Wrong article slug provided")
